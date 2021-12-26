@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>于涛的期末大作业 | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="5.导师分配Python读取&lt;待分配学生模板buu.xlsx&gt;，&lt;待分配导师模板buu.xlsx&gt;中的内容，按照要求实现学生与导师之间的随机分配。随机分配的结果写入到&lt;随机分配结果模板buu.xlsx&gt;注意：1）&lt;待分配学生模板buu.xlsx&gt;，&lt;待分配导师模板buu.xlsx&gt;这两个文件中的行数并不固定。2）一名学生对应一名导师，一名">
+<meta property="og:type" content="article">
+<meta property="og:title" content="于涛的期末大作业">
+<meta property="og:url" content="http://example.com/2021/12/26/chuizi5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="5.导师分配Python读取&lt;待分配学生模板buu.xlsx&gt;，&lt;待分配导师模板buu.xlsx&gt;中的内容，按照要求实现学生与导师之间的随机分配。随机分配的结果写入到&lt;随机分配结果模板buu.xlsx&gt;注意：1）&lt;待分配学生模板buu.xlsx&gt;，&lt;待分配导师模板buu.xlsx&gt;这两个文件中的行数并不固定。2）一名学生对应一名导师，一名">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-12-26T02:57:38.000Z">
+<meta property="article:modified_time" content="2021-12-26T03:02:20.011Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/12/26/chuizi5/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '于涛的期末大作业',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-12-26 11:02:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">于涛的期末大作业</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-12-26T02:57:38.000Z" title="Created 2021-12-26 10:57:38">2021-12-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-12-26T03:02:20.011Z" title="Updated 2021-12-26 11:02:20">2021-12-26</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="于涛的期末大作业"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="5-导师分配"><a href="#5-导师分配" class="headerlink" title="5.导师分配"></a>5.导师分配</h1><p><em><strong>Python读取&lt;待分配学生模板buu.xlsx&gt;，&lt;待分配导师模板buu.xlsx&gt;中的内容，</strong></em><br><em><strong>按照要求实现学生与导师之间的随机分配。随机分配的结果写入到&lt;随机分配结果模板buu.xlsx&gt;</strong></em><br><em><strong>注意：<br>1）&lt;待分配学生模板buu.xlsx&gt;，&lt;待分配导师模板buu.xlsx&gt;这两个文件中的行数并不固定。<br>2）一名学生对应一名导师，一名导师对应多名学生。<br>3）模板<br>附件1：待分配学生模板buu.xlsx<br>附件2：待分配导师模板buu.xlsx<br>附件3：随机分配结果模板buu.xlsx</strong></em></p>
+<p><em>源码：</em><br>from openpyxl import load_workbook<br>from openpyxl import Workbook<br>import openpyxl<br>import random</p>
+<p>teachers={}#把老师作为一个字典<br>tutor= load_workbook(‘1_待分配导师模板buu(1)(1).xlsx’)#导入导师模板<br>sheetst= tutor.worksheets   # 获取导师模板所有的sheet<br>tu= sheetst[0] # 把第一张sheet赋给“tu”</p>
+<p>for i in range(2,8):#共有7名导师，第一行为表格，i作为行数，从2循环到8<br>    teachers[tu.cell(i,1).value]=tu.cell(i,2).value<br>    #把第i行第1列的数据（老师姓名）作为字典的key值，把第i行第2列的数据（老师的可分配学生数量）作为字典的value值<br>print(teachers)<br>#读取学生数据直接写到最后的表格里，再依次随机导师，随到的导师value减1<br>student=load_workbook(‘待分配学生模板buu.xlsx’)#导入学生模板<br>sheetss=student.worksheets #获取学生模板的所有sheet<br>su=sheetss[0] # 把第一张sheet赋给“su”</p>
+<p>result=openpyxl.load_workbook(“随机分配结果模板buu.xlsx”)#导入结果模板<br>re=result.worksheets[0]#把结果模板的第一张sheet赋值给“re”<br>t = 0#t是一个flag，用来判定导师是否成功被分配<br>for i in range(2,38):<br>    re.cell(i,1,su.cell(i,2).value)<br>    re.cell(i,2,su.cell(i, 1).value)<br>    re.cell(i,3,su.cell(i, 3).value)<br>    #以下是随机分配老师部分<br>    while 1:<br>        num=random.randint(1,9)<br>        for k in teachers:<br>            if teachers[k] == num:<br>                re.cell(i, 4, k)<br>                print(k)<br>                teachers[k] -= 1<br>                print(teachers[k])<br>                t=1<br>                break<br>        if t==1:<br>            t=0<br>            break</p>
+<p>result.save(filename=”随机分配结果模板buu.xlsx”)</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/12/26/chuizi5/">http://example.com/2021/12/26/chuizi5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/12/26/chuizi3/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">于涛的期末大作业</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%AF%BC%E5%B8%88%E5%88%86%E9%85%8D"><span class="toc-number">1.</span> <span class="toc-text">5.导师分配</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/12/26/chuizi5/" title="于涛的期末大作业"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="于涛的期末大作业"/></a><div class="content"><a class="title" href="/2021/12/26/chuizi5/" title="于涛的期末大作业">于涛的期末大作业</a><time datetime="2021-12-26T02:57:38.000Z" title="Created 2021-12-26 10:57:38">2021-12-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/26/chuizi3/" title="于涛的期末大作业"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="于涛的期末大作业"/></a><div class="content"><a class="title" href="/2021/12/26/chuizi3/" title="于涛的期末大作业">于涛的期末大作业</a><time datetime="2021-12-26T02:05:07.000Z" title="Created 2021-12-26 10:05:07">2021-12-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
